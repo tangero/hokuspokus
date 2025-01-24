@@ -19,6 +19,7 @@ const i18n = i18next
             welcome: "Welcome back!",
             createAccount: "Create a new account",
             loading: "Loading...",
+            orContinueWith: "Or continue with",
           },
           activity: {
             placeholder:
@@ -91,6 +92,7 @@ const i18n = i18next
             welcome: "Vítejte zpět!",
             createAccount: "Vytvořit nový účet",
             loading: "Načítání...",
+            orContinueWith: "Nebo pokračujte s",
           },
           activity: {
             placeholder: "Co děláš? Např: 22.1. 30m Práce na projektu #projekt",

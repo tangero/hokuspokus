@@ -14,7 +14,14 @@ export const AuthContext = createContext<AuthContextType>({
 
 export const useAuth = () => useContext(AuthContext);
 
-export const signIn = async (email: string, password: string) => {
+export const signInWithGoogle = async () => {
+  const { error } = await supabase.auth.signInWithOAuth({
+    provider: "google",
+  });
+  if (error) throw error;
+};
+
+export const signInWithPassword = async (email: string, password: string) => {
   const { error } = await supabase.auth.signInWithPassword({ email, password });
   if (error) throw error;
 };
