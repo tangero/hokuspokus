@@ -20,6 +20,18 @@ function AppRoutes() {
     );
   }
 
+  if (
+    !import.meta.env.VITE_SUPABASE_URL ||
+    !import.meta.env.VITE_SUPABASE_ANON_KEY
+  ) {
+    return (
+      <div className="h-screen w-screen flex items-center justify-center flex-col gap-4">
+        <h1 className="text-2xl font-bold">Configuration Error</h1>
+        <p>Missing Supabase environment variables</p>
+      </div>
+    );
+  }
+
   return (
     <Suspense fallback={<p>Loading...</p>}>
       <Routes>

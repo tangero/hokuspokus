@@ -6,7 +6,7 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 flex flex-col">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 flex flex-col justify-between">
       {children}
       <Footer />
     </div>
