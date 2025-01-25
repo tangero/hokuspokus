@@ -24,6 +24,18 @@ export default function Changelog() {
         <div className="space-y-12">
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">
+              Version 1.0.1 (2024-03-27)
+            </h2>
+            <div className="space-y-2">
+              <h3 className="text-lg font-medium">🔧 Fixes</h3>
+              <ul className="list-disc list-inside space-y-1 text-slate-600 ml-4">
+                <li>Fixed Vercel Speed Insights integration</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold">
               Version 1.0.0 (2024-03-27)
             </h2>
             <div className="space-y-2">
@@ -35,6 +47,7 @@ export default function Changelog() {
                 <li>Multi-language support (English, Czech, German)</li>
                 <li>User profile management</li>
                 <li>Responsive design</li>
+                <li>Performance monitoring with Vercel Speed Insights</li>
               </ul>
             </div>
           </div>
