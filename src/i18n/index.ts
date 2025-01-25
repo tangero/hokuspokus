@@ -42,6 +42,7 @@ const i18n = i18next
             minutes: "min",
             profile: "Profile",
             back: "Back",
+            changelog: "Changelog",
           },
           landing: {
             title:
@@ -114,6 +115,7 @@ const i18n = i18next
             minutes: "min",
             profile: "Profil",
             back: "Zpět",
+            changelog: "Historie změn",
           },
           landing: {
             title: "Sledujte své aktivity jednoduše pomocí přirozeného jazyka",
@@ -148,6 +150,81 @@ const i18n = i18next
             updateSuccessDesc: "Váš profil byl úspěšně aktualizován.",
             updateError: "Chyba",
             updateErrorDesc: "Nepodařilo se aktualizovat profil.",
+          },
+        },
+      },
+      de: {
+        translation: {
+          auth: {
+            login: "Anmelden",
+            signup: "Registrieren",
+            email: "E-Mail",
+            password: "Passwort",
+            needAccount: "Noch kein Konto?",
+            haveAccount: "Bereits ein Konto?",
+            welcome: "Willkommen zurück!",
+            createAccount: "Neues Konto erstellen",
+            loading: "Laden...",
+            orContinueWith: "Oder fortfahren mit",
+          },
+          activity: {
+            placeholder:
+              "Was machst du? Z.B: 22.1. 30m Arbeit am Projekt #projekt",
+            add: "Hinzufügen",
+            edit: "Bearbeiten",
+            delete: "Löschen",
+            cancel: "Abbrechen",
+            saving: "Speichern...",
+            deleteConfirm: "Möchten Sie diese Aktivität wirklich löschen?",
+            deleteDescription:
+              "Diese Aktion kann nicht rückgängig gemacht werden.",
+            deleteSuccess: "Aktivität gelöscht",
+            deleteSuccessDesc: "Die Aktivität wurde erfolgreich gelöscht.",
+            error: "Fehler",
+            deleteError: "Aktivität konnte nicht gelöscht werden.",
+          },
+          common: {
+            loading: "Laden...",
+            logout: "Abmelden",
+            minutes: "min",
+            profile: "Profil",
+            back: "Zurück",
+            changelog: "Änderungsprotokoll",
+          },
+          landing: {
+            title:
+              "Verfolgen Sie Ihre Aktivitäten mühelos mit natürlicher Spracheingabe",
+            getStarted: "Loslegen",
+            features: {
+              timeInput: {
+                title: "Natürliche Zeiteingabe",
+                description:
+                  "Geben Sie Aktivitäten in natürlicher Sprache mit flexiblen Datums- und Zeitformaten ein",
+              },
+              tagging: {
+                title: "Intelligentes Tagging",
+                description:
+                  "Organisieren Sie Ihre Aktivitäten mit Hashtags für einfache Kategorisierung und Filterung",
+              },
+              insights: {
+                title: "Einblicke",
+                description:
+                  "Verfolgen Sie Ihren Fortschritt und erhalten Sie Einblicke in Ihre Zeitnutzung",
+              },
+            },
+          },
+          profile: {
+            settings: "Profileinstellungen",
+            firstName: "Vorname",
+            lastName: "Nachname",
+            language: "Bevorzugte Sprache",
+            selectLanguage: "Sprache auswählen",
+            saveChanges: "Änderungen speichern",
+            saving: "Speichern...",
+            updateSuccess: "Profil aktualisiert",
+            updateSuccessDesc: "Ihr Profil wurde erfolgreich aktualisiert.",
+            updateError: "Fehler",
+            updateErrorDesc: "Profil konnte nicht aktualisiert werden.",
           },
         },
       },

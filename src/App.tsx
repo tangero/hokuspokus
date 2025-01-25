@@ -4,6 +4,7 @@ import Home from "./components/home";
 import AuthForm from "./components/auth/auth-form";
 import Profile from "./components/profile";
 import Landing from "./components/landing";
+import Changelog from "./components/changelog";
 import { useAuth } from "./lib/auth";
 import AuthProvider from "./providers/auth-provider";
 import { Toaster } from "@/components/ui/toaster";
@@ -40,6 +41,7 @@ function AppRoutes() {
           path="/profile"
           element={user ? <Profile /> : <Navigate to="/login" />}
         />
+        <Route path="/changelog" element={<Changelog />} />
         <Route
           path="/login"
           element={

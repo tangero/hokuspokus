@@ -15,6 +15,7 @@ import { supabase } from "@/lib/supabase";
 import { useAuth } from "@/lib/auth";
 import { useToast } from "./ui/use-toast";
 import { useTranslation } from "react-i18next";
+import Layout from "./shared/layout";
 
 export default function Profile() {
   const { user } = useAuth();
@@ -90,7 +91,7 @@ export default function Profile() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
+    <Layout>
       <div className="container py-8 max-w-2xl mx-auto">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -151,6 +152,7 @@ export default function Profile() {
                   <SelectContent>
                     <SelectItem value="en">English</SelectItem>
                     <SelectItem value="cs">Čeština</SelectItem>
+                    <SelectItem value="de">Deutsch</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -162,6 +164,6 @@ export default function Profile() {
           </CardContent>
         </Card>
       </div>
-    </div>
+    </Layout>
   );
 }

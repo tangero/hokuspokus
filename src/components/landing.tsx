@@ -1,6 +1,7 @@
 import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import Layout from "./shared/layout";
 import { ArrowRight, Clock, Hash, BarChart } from "lucide-react";
 
 export default function Landing() {
@@ -8,7 +9,7 @@ export default function Landing() {
   const { t } = useTranslation();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
+    <Layout>
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="text-center space-y-6 max-w-3xl mx-auto">
@@ -66,6 +67,6 @@ export default function Landing() {
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }

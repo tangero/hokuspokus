@@ -4,6 +4,7 @@ import { signOut } from "@/lib/auth";
 import { useTranslation } from "react-i18next";
 import { Menu, User, LogOut } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import Layout from "./shared/layout";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,7 +17,7 @@ function Home() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
+    <Layout>
       <div className="container py-8 max-w-2xl mx-auto space-y-8">
         <div className="flex justify-between items-center">
           <h1 className="text-2xl font-bold">Progressor</h1>
@@ -41,7 +42,7 @@ function Home() {
 
         <ActivityList />
       </div>
-    </div>
+    </Layout>
   );
 }
 
