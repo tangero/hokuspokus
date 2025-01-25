@@ -25,6 +25,15 @@ export default function UpdatePasswordForm() {
     setLoading(true);
 
     try {
+      // Get the hash from the URL if it exists
+      const hash = window.location.hash;
+
+      if (hash) {
+        // If we have a hash, we need to exchange it for a session
+        const { error: sessionError } = await supabase.auth.refreshSession();
+        if (sessionError) throw sessionError;
+      }
+
       const { error } = await supabase.auth.updateUser({
         password: password,
       });
