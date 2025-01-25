@@ -9,6 +9,7 @@ import { useAuth } from "./lib/auth";
 import AuthProvider from "./providers/auth-provider";
 import { Toaster } from "@/components/ui/toaster";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import routes from "tempo-routes";
 
 function AppRoutes() {
@@ -69,6 +70,7 @@ function App() {
       <AppRoutes />
       <Toaster />
       <Analytics />
+      <SpeedInsights />
     </AuthProvider>
   );
 }

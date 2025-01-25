@@ -17,7 +17,7 @@ export default function Landing() {
             Progressor
           </h1>
           <p className="text-xl md:text-2xl text-slate-600">
-            Track your activities effortlessly with natural language input
+            {t("landing.title")}
           </p>
           <div className="pt-4">
             <Button
@@ -25,7 +25,7 @@ export default function Landing() {
               onClick={() => navigate("/login")}
               className="bg-gradient-to-r from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600"
             >
-              Get Started <ArrowRight className="ml-2 h-5 w-5" />
+              {t("landing.getStarted")} <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
         </div>
@@ -38,10 +38,11 @@ export default function Landing() {
             <div className="h-12 w-12 rounded-lg bg-slate-100 flex items-center justify-center mb-4">
               <Clock className="h-6 w-6 text-slate-600" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Natural Time Input</h3>
+            <h3 className="text-xl font-semibold mb-2">
+              {t("landing.features.timeInput.title")}
+            </h3>
             <p className="text-slate-600">
-              Enter activities using natural language with flexible date and
-              time formats
+              {t("landing.features.timeInput.description")}
             </p>
           </div>
 
@@ -49,10 +50,11 @@ export default function Landing() {
             <div className="h-12 w-12 rounded-lg bg-slate-100 flex items-center justify-center mb-4">
               <Hash className="h-6 w-6 text-slate-600" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Smart Tagging</h3>
+            <h3 className="text-xl font-semibold mb-2">
+              {t("landing.features.tagging.title")}
+            </h3>
             <p className="text-slate-600">
-              Organize your activities with hashtags for easy categorization and
-              filtering
+              {t("landing.features.tagging.description")}
             </p>
           </div>
 
@@ -60,9 +62,11 @@ export default function Landing() {
             <div className="h-12 w-12 rounded-lg bg-slate-100 flex items-center justify-center mb-4">
               <BarChart className="h-6 w-6 text-slate-600" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Insights</h3>
+            <h3 className="text-xl font-semibold mb-2">
+              {t("landing.features.insights.title")}
+            </h3>
             <p className="text-slate-600">
-              Track your progress and get insights into how you spend your time
+              {t("landing.features.insights.description")}
             </p>
           </div>
         </div>

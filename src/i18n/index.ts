@@ -36,14 +36,6 @@ const i18n = i18next
             error: "Error",
             deleteError: "Failed to delete activity.",
           },
-          common: {
-            loading: "Loading...",
-            logout: "Logout",
-            minutes: "min",
-            profile: "Profile",
-            back: "Back",
-            changelog: "Changelog",
-          },
           landing: {
             title:
               "Track your activities effortlessly with natural language input",
@@ -65,6 +57,14 @@ const i18n = i18next
                   "Track your progress and get insights into how you spend your time",
               },
             },
+          },
+          common: {
+            loading: "Loading...",
+            logout: "Logout",
+            minutes: "min",
+            profile: "Profile",
+            back: "Back",
+            changelog: "Changelog",
           },
           profile: {
             settings: "Profile Settings",
@@ -109,14 +109,6 @@ const i18n = i18next
             error: "Chyba",
             deleteError: "Nepodařilo se smazat aktivitu.",
           },
-          common: {
-            loading: "Načítání...",
-            logout: "Odhlásit",
-            minutes: "min",
-            profile: "Profil",
-            back: "Zpět",
-            changelog: "Historie změn",
-          },
           landing: {
             title: "Sledujte své aktivity jednoduše pomocí přirozeného jazyka",
             getStarted: "Začít",
@@ -137,6 +129,14 @@ const i18n = i18next
                   "Sledujte svůj pokrok a získejte přehled o tom, jak trávíte svůj čas",
               },
             },
+          },
+          common: {
+            loading: "Načítání...",
+            logout: "Odhlásit",
+            minutes: "min",
+            profile: "Profil",
+            back: "Zpět",
+            changelog: "Historie změn",
           },
           profile: {
             settings: "Nastavení profilu",
@@ -183,14 +183,6 @@ const i18n = i18next
             error: "Fehler",
             deleteError: "Aktivität konnte nicht gelöscht werden.",
           },
-          common: {
-            loading: "Laden...",
-            logout: "Abmelden",
-            minutes: "min",
-            profile: "Profil",
-            back: "Zurück",
-            changelog: "Änderungsprotokoll",
-          },
           landing: {
             title:
               "Verfolgen Sie Ihre Aktivitäten mühelos mit natürlicher Spracheingabe",
@@ -212,6 +204,14 @@ const i18n = i18next
                   "Verfolgen Sie Ihren Fortschritt und erhalten Sie Einblicke in Ihre Zeitnutzung",
               },
             },
+          },
+          common: {
+            loading: "Laden...",
+            logout: "Abmelden",
+            minutes: "min",
+            profile: "Profil",
+            back: "Zurück",
+            changelog: "Änderungsprotokoll",
           },
           profile: {
             settings: "Profileinstellungen",
