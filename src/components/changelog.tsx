@@ -24,6 +24,18 @@ export default function Changelog() {
         <div className="space-y-12">
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">
+              Version 1.0.2 (2024-03-27)
+            </h2>
+            <div className="space-y-2">
+              <h3 className="text-lg font-medium">✨ New Features</h3>
+              <ul className="list-disc list-inside space-y-1 text-slate-600 ml-4">
+                <li>Added password reset functionality</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold">
               Version 1.0.1 (2024-03-27)
             </h2>
             <div className="space-y-2">

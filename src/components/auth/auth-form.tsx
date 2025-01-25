@@ -83,14 +83,26 @@ export default function AuthForm() {
                 ? t("auth.login")
                 : t("auth.signup")}
           </Button>
-          <Button
-            type="button"
-            variant="link"
-            className="w-full"
-            onClick={() => setIsLogin(!isLogin)}
-          >
-            {isLogin ? t("auth.needAccount") : t("auth.haveAccount")}
-          </Button>
+          <div className="space-y-2">
+            <Button
+              type="button"
+              variant="link"
+              className="w-full"
+              onClick={() => setIsLogin(!isLogin)}
+            >
+              {isLogin ? t("auth.needAccount") : t("auth.haveAccount")}
+            </Button>
+            {isLogin && (
+              <Button
+                type="button"
+                variant="link"
+                className="w-full"
+                onClick={() => (window.location.href = "/reset-password")}
+              >
+                {t("auth.forgotPassword")}
+              </Button>
+            )}
+          </div>
         </form>
         <div className="relative my-4">
           <div className="absolute inset-0 flex items-center">

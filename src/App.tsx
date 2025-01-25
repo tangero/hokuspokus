@@ -2,6 +2,8 @@ import { Suspense } from "react";
 import { useRoutes, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./components/home";
 import AuthForm from "./components/auth/auth-form";
+import ResetPasswordForm from "./components/auth/reset-password-form";
+import UpdatePasswordForm from "./components/auth/update-password-form";
 import Profile from "./components/profile";
 import Landing from "./components/landing";
 import Changelog from "./components/changelog";
@@ -54,6 +56,26 @@ function AppRoutes() {
             ) : (
               <Navigate to="/" />
             )
+          }
+        />
+        <Route
+          path="/reset-password"
+          element={
+            !user ? (
+              <div className="h-screen w-screen flex items-center justify-center bg-slate-50">
+                <ResetPasswordForm />
+              </div>
+            ) : (
+              <Navigate to="/" />
+            )
+          }
+        />
+        <Route
+          path="/update-password"
+          element={
+            <div className="h-screen w-screen flex items-center justify-center bg-slate-50">
+              <UpdatePasswordForm />
+            </div>
           }
         />
         {import.meta.env.VITE_TEMPO === "true" && (

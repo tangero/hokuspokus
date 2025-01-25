@@ -20,6 +20,28 @@ const i18n = i18next
             createAccount: "Create a new account",
             loading: "Loading...",
             orContinueWith: "Or continue with",
+            forgotPassword: "Forgot password?",
+            resetPassword: "Reset Password",
+            resetPasswordDesc:
+              "Enter your email to receive a password reset link",
+            sendResetLink: "Send Reset Link",
+            sending: "Sending...",
+            checkYourEmail: "Check your email",
+            resetPasswordSent:
+              "We've sent you a password reset link. Please check your email.",
+            resetPasswordSuccess: "Reset link sent",
+            resetPasswordSuccessDesc:
+              "Check your email for the password reset link.",
+            resetPasswordError: "Failed to send reset link",
+            backToLogin: "Back to login",
+            updatePassword: "Update Password",
+            updatePasswordDesc: "Enter your new password",
+            newPassword: "New password",
+            updating: "Updating...",
+            passwordUpdated: "Password updated",
+            passwordUpdatedDesc: "Your password has been successfully updated.",
+            updatePasswordError: "Failed to update password",
+            error: "Error",
           },
           activity: {
             placeholder:
@@ -94,6 +116,28 @@ const i18n = i18next
             createAccount: "Vytvořit nový účet",
             loading: "Načítání...",
             orContinueWith: "Nebo pokračujte s",
+            forgotPassword: "Zapomenuté heslo?",
+            resetPassword: "Reset hesla",
+            resetPasswordDesc:
+              "Zadejte email pro zaslání odkazu na reset hesla",
+            sendResetLink: "Odeslat odkaz",
+            sending: "Odesílám...",
+            checkYourEmail: "Zkontrolujte email",
+            resetPasswordSent:
+              "Poslali jsme vám odkaz na reset hesla. Prosím zkontrolujte svůj email.",
+            resetPasswordSuccess: "Odkaz odeslán",
+            resetPasswordSuccessDesc:
+              "Zkontrolujte svůj email pro odkaz na reset hesla.",
+            resetPasswordError: "Nepodařilo se odeslat odkaz na reset hesla",
+            backToLogin: "Zpět na přihlášení",
+            updatePassword: "Aktualizovat heslo",
+            updatePasswordDesc: "Zadejte nové heslo",
+            newPassword: "Nové heslo",
+            updating: "Aktualizuji...",
+            passwordUpdated: "Heslo aktualizováno",
+            passwordUpdatedDesc: "Vaše heslo bylo úspěšně aktualizováno.",
+            updatePasswordError: "Nepodařilo se aktualizovat heslo",
+            error: "Chyba",
           },
           activity: {
             placeholder: "Co děláš? Např: 22.1. 30m Práce na projektu #projekt",
@@ -166,6 +210,28 @@ const i18n = i18next
             createAccount: "Neues Konto erstellen",
             loading: "Laden...",
             orContinueWith: "Oder fortfahren mit",
+            forgotPassword: "Passwort vergessen?",
+            resetPassword: "Passwort zurücksetzen",
+            resetPasswordDesc:
+              "Geben Sie Ihre E-Mail-Adresse ein, um einen Link zum Zurücksetzen des Passworts zu erhalten",
+            sendResetLink: "Link senden",
+            sending: "Senden...",
+            checkYourEmail: "Überprüfen Sie Ihre E-Mail",
+            resetPasswordSent:
+              "Wir haben Ihnen einen Link zum Zurücksetzen des Passworts gesendet. Bitte überprüfen Sie Ihre E-Mail.",
+            resetPasswordSuccess: "Link gesendet",
+            resetPasswordSuccessDesc:
+              "Überprüfen Sie Ihre E-Mail für den Link zum Zurücksetzen des Passworts.",
+            resetPasswordError: "Fehler beim Senden des Reset-Links",
+            backToLogin: "Zurück zur Anmeldung",
+            updatePassword: "Passwort aktualisieren",
+            updatePasswordDesc: "Geben Sie Ihr neues Passwort ein",
+            newPassword: "Neues Passwort",
+            updating: "Aktualisiere...",
+            passwordUpdated: "Passwort aktualisiert",
+            passwordUpdatedDesc: "Ihr Passwort wurde erfolgreich aktualisiert.",
+            updatePasswordError: "Fehler beim Aktualisieren des Passworts",
+            error: "Fehler",
           },
           activity: {
             placeholder:

@@ -10,4 +10,12 @@ if (!supabaseUrl || !supabaseAnonKey) {
 export const supabase = createClient(
   supabaseUrl || "missing-url",
   supabaseAnonKey || "missing-key",
+  {
+    auth: {
+      flowType: "pkce",
+      autoRefreshToken: true,
+      detectSessionInUrl: true,
+      persistSession: true,
+    },
+  },
 );
