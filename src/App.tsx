@@ -8,6 +8,7 @@ import Changelog from "./components/changelog";
 import { useAuth } from "./lib/auth";
 import AuthProvider from "./providers/auth-provider";
 import { Toaster } from "@/components/ui/toaster";
+import { Analytics } from "@vercel/analytics/react";
 import routes from "tempo-routes";
 
 function AppRoutes() {
@@ -67,6 +68,7 @@ function App() {
     <AuthProvider>
       <AppRoutes />
       <Toaster />
+      <Analytics />
     </AuthProvider>
   );
 }
