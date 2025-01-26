@@ -1,6 +1,8 @@
 import { Suspense } from "react";
 import { useRoutes, Routes, Route, Navigate } from "react-router-dom";
+import Layout from "./components/shared/layout";
 import Home from "./components/home";
+import Dashboard from "./components/dashboard";
 import AuthForm from "./components/auth/auth-form";
 import ResetPasswordForm from "./components/auth/reset-password-form";
 import UpdatePasswordForm from "./components/auth/update-password-form";
@@ -13,6 +15,10 @@ import { Toaster } from "@/components/ui/toaster";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import routes from "tempo-routes";
+
+function TempoRoutes() {
+  return import.meta.env.VITE_TEMPO === "true" ? useRoutes(routes) : null;
+}
 
 function AppRoutes() {
   const { user, loading } = useAuth();
@@ -47,12 +53,18 @@ function AppRoutes() {
         />
         <Route path="/changelog" element={<Changelog />} />
         <Route
+          path="/dashboard"
+          element={user ? <Dashboard /> : <Navigate to="/login" />}
+        />
+        <Route
           path="/login"
           element={
             !user ? (
-              <div className="h-screen w-screen flex items-center justify-center bg-slate-50">
-                <AuthForm />
-              </div>
+              <Layout>
+                <div className="flex-1 flex items-center justify-center">
+                  <AuthForm />
+                </div>
+              </Layout>
             ) : (
               <Navigate to="/" />
             )
@@ -62,9 +74,11 @@ function AppRoutes() {
           path="/reset-password"
           element={
             !user ? (
-              <div className="h-screen w-screen flex items-center justify-center bg-slate-50">
-                <ResetPasswordForm />
-              </div>
+              <Layout>
+                <div className="flex-1 flex items-center justify-center">
+                  <ResetPasswordForm />
+                </div>
+              </Layout>
             ) : (
               <Navigate to="/" />
             )
@@ -73,14 +87,14 @@ function AppRoutes() {
         <Route
           path="/update-password"
           element={
-            <div className="h-screen w-screen flex items-center justify-center bg-slate-50">
-              <UpdatePasswordForm />
-            </div>
+            <Layout>
+              <div className="flex-1 flex items-center justify-center">
+                <UpdatePasswordForm />
+              </div>
+            </Layout>
           }
         />
-        {import.meta.env.VITE_TEMPO === "true" && (
-          <Route path="/tempobook/*" element={useRoutes(routes)} />
-        )}
+        <Route path="/tempobook/*" element={<TempoRoutes />} />
       </Routes>
     </Suspense>
   );

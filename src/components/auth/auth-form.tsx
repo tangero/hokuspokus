@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/card";
 import { signInWithPassword, signUp, signInWithGoogle } from "@/lib/auth";
 import { useToast } from "@/components/ui/use-toast";
-
 import { useTranslation } from "react-i18next";
 
 export default function AuthForm() {
@@ -18,6 +17,8 @@ export default function AuthForm() {
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
 
@@ -28,24 +29,24 @@ export default function AuthForm() {
       if (isLogin) {
         await signInWithPassword(email, password);
       } else {
-        await signUp(email, password);
+        await signUp(email, password, firstName, lastName);
         toast({
-          title: "Registration successful",
-          description: "You can now log in with your credentials.",
+          title: t("auth.registrationSuccess"),
+          description: t("auth.registrationSuccessDesc"),
         });
-        setIsLogin(true); // Switch back to login view
-        setEmail(""); // Clear form
+        setIsLogin(true);
+        setEmail("");
         setPassword("");
+        setFirstName("");
+        setLastName("");
       }
     } catch (error: any) {
       console.error("Auth error:", error);
       toast({
         variant: "destructive",
-        title: "Error",
+        title: t("auth.error"),
         description:
-          error?.message ||
-          error?.error_description ||
-          "An error occurred during authentication",
+          error?.message || error?.error_description || t("auth.genericError"),
       });
     } finally {
       setLoading(false);
@@ -62,6 +63,24 @@ export default function AuthForm() {
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
+          {!isLogin && (
+            <>
+              <Input
+                type="text"
+                placeholder={t("auth.firstName")}
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                required
+              />
+              <Input
+                type="text"
+                placeholder={t("auth.lastName")}
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                required
+              />
+            </>
+          )}
           <Input
             type="email"
             placeholder={t("auth.email")}

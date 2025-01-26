@@ -1,9 +1,11 @@
 import { ArrowLeft } from "lucide-react";
 import { Button } from "./ui/button";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import Layout from "./shared/layout";
 
 export default function Changelog() {
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
   return (
@@ -13,7 +15,7 @@ export default function Changelog() {
           <h1 className="text-3xl font-bold">{t("common.changelog")}</h1>
           <Button
             variant="ghost"
-            onClick={() => window.history.back()}
+            onClick={() => navigate(-1)}
             className="text-muted-foreground"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
@@ -22,6 +24,24 @@ export default function Changelog() {
         </div>
 
         <div className="space-y-12">
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold">
+              Version 1.1.0 (2024-03-28)
+            </h2>
+            <div className="space-y-2">
+              <h3 className="text-lg font-medium">🔧 Improvements</h3>
+              <ul className="list-disc list-inside space-y-1 text-slate-600 ml-4">
+                <li>Fixed realtime updates in activity dashboard</li>
+                <li>
+                  Improved date handling in activity parser - now uses current
+                  year
+                </li>
+                <li>Fixed activity filtering in daily view</li>
+                <li>Enhanced activity list refresh after edits</li>
+              </ul>
+            </div>
+          </div>
+
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">
               Version 1.0.2 (2024-03-27)

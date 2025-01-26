@@ -17,6 +17,12 @@ export const useAuth = () => useContext(AuthContext);
 export const signInWithGoogle = async () => {
   const { error } = await supabase.auth.signInWithOAuth({
     provider: "google",
+    options: {
+      queryParams: {
+        access_type: "offline",
+        prompt: "consent",
+      },
+    },
   });
   if (error) throw error;
 };
@@ -26,13 +32,20 @@ export const signInWithPassword = async (email: string, password: string) => {
   if (error) throw error;
 };
 
-export const signUp = async (email: string, password: string) => {
+export const signUp = async (
+  email: string,
+  password: string,
+  firstName: string,
+  lastName: string,
+) => {
   const { data, error } = await supabase.auth.signUp({
     email,
     password,
     options: {
       data: {
-        email: email,
+        first_name: firstName,
+        last_name: lastName,
+        email,
       },
     },
   });
@@ -45,6 +58,19 @@ export const signUp = async (email: string, password: string) => {
   if (!data?.user) {
     console.error("No user data returned");
     throw new Error("No user data returned");
+  }
+
+  // Create user profile
+  const { error: profileError } = await supabase.from("user_profiles").insert({
+    id: data.user.id,
+    first_name: firstName,
+    last_name: lastName,
+    email,
+  });
+
+  if (profileError) {
+    console.error("Profile creation error:", profileError);
+    throw profileError;
   }
 
   return data;

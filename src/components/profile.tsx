@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
@@ -18,6 +19,7 @@ import { useTranslation } from "react-i18next";
 import Layout from "./shared/layout";
 
 export default function Profile() {
+  const navigate = useNavigate();
   const { user } = useAuth();
   const { toast } = useToast();
   const { t, i18n } = useTranslation();
@@ -25,6 +27,7 @@ export default function Profile() {
   const [profile, setProfile] = useState({
     first_name: "",
     last_name: "",
+    email: "",
     preferred_language: "",
   });
 
@@ -43,7 +46,10 @@ export default function Profile() {
       .single();
 
     if (data) {
-      setProfile(data);
+      setProfile({
+        ...data,
+        email: user.email || "",
+      });
       if (data.preferred_language) {
         i18n.changeLanguage(data.preferred_language);
       }
@@ -51,6 +57,7 @@ export default function Profile() {
       // If no profile exists, create one
       await supabase.from("user_profiles").insert({
         id: user.id,
+        email: user.email,
         preferred_language: i18n.language,
       });
     }
@@ -92,13 +99,13 @@ export default function Profile() {
 
   return (
     <Layout>
-      <div className="container py-8 max-w-2xl mx-auto">
+      <div className="container py-8 max-w-4xl mx-auto">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle>{t("profile.settings")}</CardTitle>
             <Button
               variant="ghost"
-              onClick={() => window.history.back()}
+              onClick={() => navigate(-1)}
               className="text-muted-foreground"
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
@@ -107,6 +114,11 @@ export default function Profile() {
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="email">{t("auth.email")}</Label>
+                <Input id="email" value={profile.email} disabled />
+              </div>
+
               <div className="space-y-2">
                 <Label htmlFor="firstName">{t("profile.firstName")}</Label>
                 <Input
@@ -153,6 +165,33 @@ export default function Profile() {
                     <SelectItem value="en">English</SelectItem>
                     <SelectItem value="cs">Čeština</SelectItem>
                     <SelectItem value="de">Deutsch</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="weekStartsOn">
+                  {t("profile.weekStartsOn")}
+                </Label>
+                <Select
+                  value={profile.week_starts_on || "monday"}
+                  onValueChange={(value) =>
+                    setProfile((prev) => ({
+                      ...prev,
+                      week_starts_on: value,
+                    }))
+                  }
+                >
+                  <SelectTrigger>
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="monday">
+                      {t("profile.monday")}
+                    </SelectItem>
+                    <SelectItem value="sunday">
+                      {t("profile.sunday")}
+                    </SelectItem>
                   </SelectContent>
                 </Select>
               </div>

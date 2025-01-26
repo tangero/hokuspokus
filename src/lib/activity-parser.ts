@@ -1,4 +1,11 @@
-import { parse, isValid, format } from "date-fns";
+import {
+  parse,
+  isValid,
+  format,
+  setHours,
+  setMinutes,
+  subMinutes,
+} from "date-fns";
 import { cs } from "date-fns/locale";
 
 type ParsedActivity = {
@@ -19,51 +26,77 @@ export function parseActivity(input: string): ParsedActivity {
   let remainingText = textWithoutTags;
 
   // Date patterns
-  const datePatterns = [
-    "d.M.yyyy H:mm",
-    "d.M.yyyy",
-    "d/M/yyyy",
-    "d MMM yyyy",
-    "d.M. H:mm",
-    "d.M.",
-  ];
+  const datePatterns = ["d.M.yyyy H:mm", "d.M.yyyy", "d.M. H:mm", "d.M."];
+
+  // Try to parse date from the first part
+  const firstWord = remainingText.split(" ")[0];
+  let dateFound = false;
 
   for (const pattern of datePatterns) {
-    const firstWord = remainingText.split(" ")[0];
-    const firstTwoWords = remainingText.split(" ").slice(0, 2).join(" ");
-
-    let date = parse(firstWord, pattern, new Date(), { locale: cs });
-    if (!isValid(date)) {
-      date = parse(firstTwoWords, pattern, new Date(), { locale: cs });
-    }
+    // Use current year as base
+    const currentYear = new Date().getFullYear();
+    const baseDate = new Date(currentYear, 0, 1);
+    let date = parse(firstWord, pattern, baseDate, { locale: cs });
 
     if (isValid(date)) {
       parsedDate = date;
-      rawDate = firstTwoWords;
-      remainingText = remainingText.replace(rawDate, "").trim();
+      rawDate = firstWord;
+      remainingText = remainingText.substring(firstWord.length).trim();
+      dateFound = true;
       break;
     }
   }
 
+  // If no date found, use current date
+  if (!dateFound) {
+    parsedDate = new Date();
+    rawDate = null;
+  }
+
   // Parse duration
   let durationMinutes: number | null = null;
-  const durationMatch = remainingText.match(
-    /\b(\d+)[:.]?(\d*)\s*[hm]\b|\b(\d+)\s*min\b/i,
-  );
+  const durationRegex =
+    /\b(\d+)\s*[mM]\b|\b(\d+)\s*[hH]\b|\b(\d+)[:.](\d+)\s*[hH]\b/;
+  const durationMatch = remainingText.match(durationRegex);
 
   if (durationMatch) {
-    if (durationMatch[1] && durationMatch[2]) {
-      // Format: 1:30h or 1.5h
-      durationMinutes =
-        parseInt(durationMatch[1]) * 60 + parseInt(durationMatch[2]);
-    } else if (durationMatch[1]) {
+    const [fullMatch, minutes, hours, hoursWithMinutes, minutesPart] =
+      durationMatch;
+
+    if (minutes) {
       // Format: 30m
-      durationMinutes = parseInt(durationMatch[1]);
-    } else if (durationMatch[3]) {
-      // Format: 30 min
-      durationMinutes = parseInt(durationMatch[3]);
+      durationMinutes = parseInt(minutes);
+    } else if (hours) {
+      // Format: 2h
+      durationMinutes = parseInt(hours) * 60;
+    } else if (hoursWithMinutes && minutesPart) {
+      // Format: 1:30h or 1.30h
+      durationMinutes = parseInt(hoursWithMinutes) * 60 + parseInt(minutesPart);
     }
-    remainingText = remainingText.replace(durationMatch[0], "").trim();
+
+    remainingText = remainingText.replace(fullMatch, "").trim();
+  }
+
+  // Handle time for the parsed date
+  if (parsedDate) {
+    if (!rawDate?.includes(":")) {
+      // If no specific time was provided
+      if (durationMinutes) {
+        // If we have duration, set time to current time minus duration
+        const now = new Date();
+        const targetTime = subMinutes(now, durationMinutes);
+        parsedDate.setHours(
+          targetTime.getHours(),
+          targetTime.getMinutes(),
+          0,
+          0,
+        );
+      } else {
+        // If no duration, use current time
+        const now = new Date();
+        parsedDate.setHours(now.getHours(), now.getMinutes(), 0, 0);
+      }
+    }
   }
 
   return {
