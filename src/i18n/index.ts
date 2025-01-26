@@ -60,6 +60,7 @@ const i18n = i18next
             time: "Time",
             duration: "Duration",
             description: "Description",
+            popularTags: "Popular Tags",
           },
           landing: {
             title:
@@ -92,6 +93,8 @@ const i18n = i18next
             changelog: "Changelog",
             dashboard: "Dashboard",
             index: "Index",
+            newer: "Newer",
+            older: "Older",
           },
           dashboard: {
             title: "Activity Dashboard",
@@ -172,6 +175,7 @@ const i18n = i18next
             time: "Čas",
             duration: "Trvání",
             description: "Popis",
+            popularTags: "Oblíbené tagy",
           },
           landing: {
             title: "Sledujte své aktivity jednoduše pomocí přirozeného jazyka",
@@ -203,6 +207,8 @@ const i18n = i18next
             changelog: "Historie změn",
             dashboard: "Dashboard",
             index: "Index",
+            newer: "Novější",
+            older: "Starší",
           },
           dashboard: {
             title: "Přehled aktivit",
@@ -285,6 +291,7 @@ const i18n = i18next
             time: "Zeit",
             duration: "Dauer",
             description: "Beschreibung",
+            popularTags: "Beliebte Tags",
           },
           landing: {
             title:
@@ -317,6 +324,8 @@ const i18n = i18next
             changelog: "Änderungsprotokoll",
             dashboard: "Dashboard",
             index: "Index",
+            newer: "Neuer",
+            older: "Älter",
           },
           dashboard: {
             title: "Aktivitätsübersicht",

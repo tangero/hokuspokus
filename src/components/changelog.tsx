@@ -26,6 +26,32 @@ export default function Changelog() {
         <div className="space-y-12">
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">
+              Version 1.2.0 (2024-03-28)
+            </h2>
+            <div className="space-y-2">
+              <h3 className="text-lg font-medium">✨ New Features</h3>
+              <ul className="list-disc list-inside space-y-1 text-slate-600 ml-4">
+                <li>Improved tag suggestions with frequency-based sorting</li>
+                <li>Added Tab key support for quick tag selection</li>
+                <li>Enhanced tag filtering in activity input</li>
+              </ul>
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-lg font-medium">🔧 Bug Fixes</h3>
+              <ul className="list-disc list-inside space-y-1 text-slate-600 ml-4">
+                <li>
+                  Fixed double hashtag display in activity list and tag cloud
+                </li>
+                <li>Fixed tag filtering in suggestions dropdown</li>
+                <li>
+                  Fixed browser console errors related to Chrome extensions
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold">
               Version 1.1.0 (2024-03-28)
             </h2>
             <div className="space-y-2">
