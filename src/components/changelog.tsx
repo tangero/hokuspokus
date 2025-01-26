@@ -26,7 +26,7 @@ export default function Changelog() {
         <div className="space-y-12">
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">
-              Version 1.2.0 (2024-03-28)
+              Version 1.2.0 (26.1.2025)
             </h2>
             <div className="space-y-2">
               <h3 className="text-lg font-medium">✨ New Features</h3>
@@ -52,7 +52,7 @@ export default function Changelog() {
 
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">
-              Version 1.1.0 (2024-03-28)
+              Version 1.1.0 (26.1.2025)
             </h2>
             <div className="space-y-2">
               <h3 className="text-lg font-medium">🔧 Improvements</h3>
@@ -70,7 +70,7 @@ export default function Changelog() {
 
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">
-              Version 1.0.2 (2024-03-27)
+              Version 1.0.2 (25.1.2025)
             </h2>
             <div className="space-y-2">
               <h3 className="text-lg font-medium">✨ New Features</h3>
@@ -82,7 +82,7 @@ export default function Changelog() {
 
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">
-              Version 1.0.1 (2024-03-27)
+              Version 1.0.1 (25.1.2025)
             </h2>
             <div className="space-y-2">
               <h3 className="text-lg font-medium">🔧 Fixes</h3>
@@ -94,7 +94,7 @@ export default function Changelog() {
 
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">
-              Version 1.0.0 (2024-03-27)
+              Version 1.0.0 (25.1.2025)
             </h2>
             <div className="space-y-2">
               <h3 className="text-lg font-medium">✨ Initial Release</h3>
