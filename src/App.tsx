@@ -8,7 +8,9 @@ import ResetPasswordForm from "./components/auth/reset-password-form";
 import UpdatePasswordForm from "./components/auth/update-password-form";
 import Profile from "./components/profile";
 import Landing from "./components/landing";
+import Help from "./components/help";
 import Changelog from "./components/changelog";
+import Summary from "./components/summary/summary";
 import { useAuth } from "./lib/auth";
 import AuthProvider from "./providers/auth-provider";
 import { Toaster } from "@/components/ui/toaster";
@@ -52,6 +54,11 @@ function AppRoutes() {
           element={user ? <Profile /> : <Navigate to="/login" />}
         />
         <Route path="/changelog" element={<Changelog />} />
+        <Route path="/help" element={<Help />} />
+        <Route
+          path="/souhrn"
+          element={user ? <Summary /> : <Navigate to="/login" />}
+        />
         <Route
           path="/dashboard"
           element={user ? <Dashboard /> : <Navigate to="/login" />}

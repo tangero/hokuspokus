@@ -26,6 +26,37 @@ export default function Changelog() {
         <div className="space-y-12">
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">
+              Version 1.3.0 (27.1.2025)
+            </h2>
+            <div className="space-y-2">
+              <h3 className="text-lg font-medium">✨ New Features</h3>
+              <ul className="list-disc list-inside space-y-1 text-slate-600 ml-4">
+                <li>Added AI-powered weekly activity summaries</li>
+                <li>
+                  Added detailed help page with input format documentation
+                </li>
+                <li>Added help button next to activity input</li>
+                <li>Added help section to main menu</li>
+              </ul>
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-lg font-medium">🔧 Improvements</h3>
+              <ul className="list-disc list-inside space-y-1 text-slate-600 ml-4">
+                <li>Updated activity input examples to be more descriptive</li>
+                <li>
+                  Added comprehensive documentation for time and duration
+                  formats
+                </li>
+                <li>Improved tag suggestions with better examples</li>
+                <li>
+                  Added caching for weekly summaries to improve performance
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold">
               Version 1.2.0 (26.1.2025)
             </h2>
             <div className="space-y-2">

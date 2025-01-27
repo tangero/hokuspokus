@@ -115,7 +115,7 @@ export default function Profile() {
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email">{t("auth.email")}</Label>
+                <Label htmlFor="email">{t("profile.email", "Email")}</Label>
                 <Input id="email" value={profile.email} disabled />
               </div>
 
