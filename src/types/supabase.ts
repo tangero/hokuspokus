@@ -45,9 +45,126 @@ export type Database = {
         }
         Relationships: []
       }
+      mesta: {
+        Row: {
+          datum_pridani: string | null
+          ico: string
+          kraj: string | null
+          nazev: string
+          pocet_obyvatel: number | null
+        }
+        Insert: {
+          datum_pridani?: string | null
+          ico: string
+          kraj?: string | null
+          nazev: string
+          pocet_obyvatel?: number | null
+        }
+        Update: {
+          datum_pridani?: string | null
+          ico?: string
+          kraj?: string | null
+          nazev?: string
+          pocet_obyvatel?: number | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          email: string | null
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      user_profiles: {
+        Row: {
+          created_at: string
+          email: string | null
+          first_name: string | null
+          id: string
+          last_name: string | null
+          preferred_language: string | null
+          updated_at: string
+          week_starts_on: string | null
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          first_name?: string | null
+          id: string
+          last_name?: string | null
+          preferred_language?: string | null
+          updated_at?: string
+          week_starts_on?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          first_name?: string | null
+          id?: string
+          last_name?: string | null
+          preferred_language?: string | null
+          updated_at?: string
+          week_starts_on?: string | null
+        }
+        Relationships: []
+      }
+      weekly_summaries: {
+        Row: {
+          activities_hash: string
+          content: string
+          created_at: string | null
+          end_date: string
+          id: string
+          start_date: string
+          user_id: string | null
+        }
+        Insert: {
+          activities_hash: string
+          content: string
+          created_at?: string | null
+          end_date: string
+          id?: string
+          start_date: string
+          user_id?: string | null
+        }
+        Update: {
+          activities_hash?: string
+          content?: string
+          created_at?: string | null
+          end_date?: string
+          id?: string
+          start_date?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
-      [_ in never]: never
+      activity_stats: {
+        Row: {
+          activity_count: number | null
+          day: string | null
+          total_minutes: number | null
+          unique_tags: string[] | null
+          user_id: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       gtrgm_compress: {

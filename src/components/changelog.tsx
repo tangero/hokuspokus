@@ -26,6 +26,30 @@ export default function Changelog() {
         <div className="space-y-12">
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">
+              Version 1.3.0 (29.1.2025)
+            </h2>
+            <div className="space-y-2">
+              <h3 className="text-lg font-medium">✨ New Features</h3>
+              <ul className="list-disc list-inside space-y-1 text-slate-600 ml-4">
+                <li>Přidána týdenní analýza aktivit s AI</li>
+                <li>Vylepšené formátování analýzy pro lepší čitelnost</li>
+                <li>
+                  Podpora více jazyků v analýze (čeština, angličtina, němčina)
+                </li>
+                <li>Cachování analýz pro rychlejší načítání</li>
+              </ul>
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-lg font-medium">🔧 Improvements</h3>
+              <ul className="list-disc list-inside space-y-1 text-slate-600 ml-4">
+                <li>Optimalizace výkonu při generování analýz</li>
+                <li>Vylepšené formátování textu v analýzách</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold">
               Version 1.2.0 (26.1.2025)
             </h2>
             <div className="space-y-2">

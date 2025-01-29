@@ -63,9 +63,13 @@ const i18n = i18next
             popularTags: "Popular Tags",
           },
           landing: {
-            title:
-              "Track your activities effortlessly with natural language input",
+            title: "Only DONE counts on the way to the goal!",
             getStarted: "Get Started",
+            example: {
+              activity: "Budget preparation for project",
+              description:
+                "Simply write what you've done - we'll automatically recognize the date, time, duration, and hashtags!",
+            },
             features: {
               timeInput: {
                 title: "Natural Time Input",
@@ -104,6 +108,8 @@ const i18n = i18next
             average: "Average",
             averageLine: "Average",
             tagDistribution: "Tag Distribution",
+            weekAnalysis: "Week Analysis",
+            noActivities: "No activities recorded for this week.",
           },
           profile: {
             settings: "Profile Settings",
@@ -178,8 +184,13 @@ const i18n = i18next
             popularTags: "Oblíbené tagy",
           },
           landing: {
-            title: "Sledujte své aktivity jednoduše pomocí přirozeného jazyka",
+            title: "Jen HOTOVÉ se počítá na cestě k cíli!",
             getStarted: "Začít",
+            example: {
+              activity: "Příprava rozpočtu pro projekt",
+              description:
+                "Jednoduše napište, co jste udělali - datum, čas, trvání a hashtagy automaticky rozpoznáme!",
+            },
             features: {
               timeInput: {
                 title: "Přirozený vstup času",
@@ -218,6 +229,8 @@ const i18n = i18next
             average: "Průměr",
             averageLine: "Průměr",
             tagDistribution: "Rozložení tagů",
+            weekAnalysis: "Analýza týdne",
+            noActivities: "Žádné aktivity pro tento týden.",
           },
           profile: {
             settings: "Nastavení profilu",
@@ -294,9 +307,13 @@ const i18n = i18next
             popularTags: "Beliebte Tags",
           },
           landing: {
-            title:
-              "Verfolgen Sie Ihre Aktivitäten mühelos mit natürlicher Spracheingabe",
+            title: "Nur ERLEDIGT zählt auf dem Weg zum Ziel!",
             getStarted: "Loslegen",
+            example: {
+              activity: "Budgetvorbereitung für Projekt",
+              description:
+                "Schreiben Sie einfach auf, was Sie gemacht haben - wir erkennen automatisch Datum, Uhrzeit, Dauer und Hashtags!",
+            },
             features: {
               timeInput: {
                 title: "Natürliche Zeiteingabe",
@@ -335,6 +352,8 @@ const i18n = i18next
             average: "Durchschnitt",
             averageLine: "Durchschnitt",
             tagDistribution: "Tag-Verteilung",
+            weekAnalysis: "Wochenanalyse",
+            noActivities: "Keine Aktivitäten für diese Woche.",
           },
           profile: {
             settings: "Profileinstellungen",

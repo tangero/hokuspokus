@@ -12,10 +12,25 @@ import {
   ResponsiveContainer,
   ReferenceLine,
 } from "recharts";
-import { format, startOfWeek, endOfWeek, eachDayOfInterval } from "date-fns";
+import {
+  format,
+  startOfWeek,
+  endOfWeek,
+  eachDayOfInterval,
+  addWeeks,
+  isBefore,
+  isAfter,
+} from "date-fns";
 import { cs, de } from "date-fns/locale";
 import { useTranslation } from "react-i18next";
-import { MoreHorizontal, Pencil, Trash2 } from "lucide-react";
+import WeekAnalysis from "./week-analysis";
+import {
+  MoreHorizontal,
+  Pencil,
+  Trash2,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -54,6 +69,7 @@ export default function ActivityDashboard() {
   const [activities, setActivities] = useState<Activity[]>([]);
   const [weekStartsOn, setWeekStartsOn] = useState<0 | 1>(1);
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const [currentPage, setCurrentPage] = useState(0);
   const [selectedDayActivities, setSelectedDayActivities] = useState<
     Activity[]
   >([]);
@@ -145,7 +161,6 @@ export default function ActivityDashboard() {
           filter: `user_id=eq.${user.id}`,
         },
         async (payload) => {
-          console.log("Received realtime update:", payload);
           await fetchActivities();
           await fetchSelectedDayActivities();
         },
@@ -232,12 +247,50 @@ export default function ActivityDashboard() {
     <div className="space-y-8">
       <Card>
         <CardHeader>
-          <CardTitle className="flex justify-between items-center">
-            <span>{t("dashboard.weeklyActivity")}</span>
-            <span className="text-sm font-normal text-muted-foreground">
-              {t("dashboard.average")}: {averageHours.toFixed(1)} h
-            </span>
-          </CardTitle>
+          <div className="flex justify-between items-center">
+            <CardTitle>{t("dashboard.weeklyActivity")}</CardTitle>
+            <div className="flex items-center gap-4">
+              <div className="text-sm font-normal text-muted-foreground">
+                {t("dashboard.average")}: {averageHours.toFixed(1)} h
+              </div>
+              <div className="flex gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    setSelectedDate(addWeeks(selectedDate, -1));
+                    setCurrentPage((prev) => prev + 1);
+                  }}
+                  disabled={
+                    !activities.some((a) =>
+                      isBefore(
+                        new Date(a.parsed_date),
+                        startOfWeek(selectedDate, { weekStartsOn }),
+                      ),
+                    ) && currentPage !== 0
+                  }
+                >
+                  <ChevronLeft className="h-4 w-4 mr-1" />
+                  {t("common.older")}
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    setSelectedDate(addWeeks(selectedDate, 1));
+                    setCurrentPage((prev) => Math.max(0, prev - 1));
+                  }}
+                  disabled={isAfter(
+                    endOfWeek(selectedDate, { weekStartsOn }),
+                    new Date(),
+                  )}
+                >
+                  {t("common.newer")}
+                  <ChevronRight className="h-4 w-4 ml-1" />
+                </Button>
+              </div>
+            </div>
+          </div>
         </CardHeader>
         <CardContent>
           <div className="h-[400px]">
@@ -427,6 +480,31 @@ export default function ActivityDashboard() {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            {t("dashboard.weekAnalysis")}
+            <span
+              className="text-sm text-muted-foreground"
+              id="analysis-source"
+            ></span>
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            {activities.length > 0 ? (
+              <div className="p-4 bg-slate-50 rounded-lg">
+                <WeekAnalysis activities={activities} />
+              </div>
+            ) : (
+              <p className="text-sm text-slate-600">
+                {t("dashboard.noActivities")}
+              </p>
+            )}
+          </div>
+        </CardContent>
+      </Card>
 
       {isDebugUser(user?.email) && (
         <Card>
