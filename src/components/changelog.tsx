@@ -26,24 +26,49 @@ export default function Changelog() {
         <div className="space-y-12">
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">
+<<<<<<< HEAD
               Version 1.3.0 (29.1.2025)
+=======
+              Version 1.3.0 (27.1.2025)
+>>>>>>> 0a74fe73010f5756445428cdf9ddb01a84f4fe0b
             </h2>
             <div className="space-y-2">
               <h3 className="text-lg font-medium">✨ New Features</h3>
               <ul className="list-disc list-inside space-y-1 text-slate-600 ml-4">
+<<<<<<< HEAD
                 <li>Přidána týdenní analýza aktivit s AI</li>
                 <li>Vylepšené formátování analýzy pro lepší čitelnost</li>
                 <li>
                   Podpora více jazyků v analýze (čeština, angličtina, němčina)
                 </li>
                 <li>Cachování analýz pro rychlejší načítání</li>
+=======
+                <li>Added AI-powered weekly activity summaries</li>
+                <li>
+                  Added detailed help page with input format documentation
+                </li>
+                <li>Added help button next to activity input</li>
+                <li>Added help section to main menu</li>
+>>>>>>> 0a74fe73010f5756445428cdf9ddb01a84f4fe0b
               </ul>
             </div>
             <div className="space-y-2">
               <h3 className="text-lg font-medium">🔧 Improvements</h3>
               <ul className="list-disc list-inside space-y-1 text-slate-600 ml-4">
+<<<<<<< HEAD
                 <li>Optimalizace výkonu při generování analýz</li>
                 <li>Vylepšené formátování textu v analýzách</li>
+=======
+                <li>Updated activity input examples to be more descriptive</li>
+                <li>
+                  Added comprehensive documentation for time and duration
+                  formats
+                </li>
+                <li>Improved tag suggestions with better examples</li>
+                <li>
+                  Added caching for weekly summaries to improve performance
+                </li>
+>>>>>>> 0a74fe73010f5756445428cdf9ddb01a84f4fe0b
               </ul>
             </div>
           </div>
