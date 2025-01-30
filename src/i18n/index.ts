@@ -73,11 +73,7 @@ const i18n = i18next
             },
           },
           landing: {
-<<<<<<< HEAD
             title: "Only DONE counts on the way to the goal!",
-=======
-            title: "Track your activities and get AI-powered insights",
->>>>>>> 0a74fe73010f5756445428cdf9ddb01a84f4fe0b
             getStarted: "Get Started",
             example: {
               activity: "Budget preparation for project",
@@ -99,7 +95,6 @@ const i18n = i18next
               },
             },
           },
-<<<<<<< HEAD
           common: {
             loading: "Loading...",
             logout: "Logout",
@@ -123,8 +118,6 @@ const i18n = i18next
             weekAnalysis: "Week Analysis",
             noActivities: "No activities recorded for this week.",
           },
-=======
->>>>>>> 0a74fe73010f5756445428cdf9ddb01a84f4fe0b
           profile: {
             settings: "Profile Settings",
             email: "Email",
@@ -242,11 +235,7 @@ const i18n = i18next
             },
           },
           landing: {
-<<<<<<< HEAD
             title: "Jen HOTOVÉ se počítá na cestě k cíli!",
-=======
-            title: "Sledujte své aktivity a získejte AI přehledy",
->>>>>>> 0a74fe73010f5756445428cdf9ddb01a84f4fe0b
             getStarted: "Začít",
             example: {
               activity: "Příprava rozpočtu pro projekt",
@@ -268,7 +257,6 @@ const i18n = i18next
               },
             },
           },
-<<<<<<< HEAD
           common: {
             loading: "Načítání...",
             logout: "Odhlásit",
@@ -292,8 +280,6 @@ const i18n = i18next
             weekAnalysis: "Analýza týdne",
             noActivities: "Žádné aktivity pro tento týden.",
           },
-=======
->>>>>>> 0a74fe73010f5756445428cdf9ddb01a84f4fe0b
           profile: {
             settings: "Nastavení profilu",
             email: "Email",
@@ -415,12 +401,7 @@ const i18n = i18next
             },
           },
           landing: {
-<<<<<<< HEAD
             title: "Nur ERLEDIGT zählt auf dem Weg zum Ziel!",
-=======
-            title:
-              "Verfolgen Sie Ihre Aktivitäten und erhalten Sie KI-gestützte Einblicke",
->>>>>>> 0a74fe73010f5756445428cdf9ddb01a84f4fe0b
             getStarted: "Loslegen",
             example: {
               activity: "Budgetvorbereitung für Projekt",
@@ -443,7 +424,6 @@ const i18n = i18next
               },
             },
           },
-<<<<<<< HEAD
           common: {
             loading: "Laden...",
             logout: "Abmelden",
@@ -467,8 +447,6 @@ const i18n = i18next
             weekAnalysis: "Wochenanalyse",
             noActivities: "Keine Aktivitäten für diese Woche.",
           },
-=======
->>>>>>> 0a74fe73010f5756445428cdf9ddb01a84f4fe0b
           profile: {
             settings: "Profileinstellungen",
             email: "E-Mail",
