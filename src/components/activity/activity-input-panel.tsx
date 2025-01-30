@@ -1,111 +1,95 @@
-import React, { useState } from "react";
+import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { AlertCircle, Send, Clock, Calendar, Hash } from "lucide-react";
-import { format } from "date-fns";
+import { Textarea } from "@/components/ui/textarea";
+import { Send, RefreshCw } from "lucide-react";
+import SentenceAnalyzer from "./sentence-analyzer";
 
 interface ActivityInputPanelProps {
-  onSubmit?: (activity: {
-    content: string;
-    parsedDate: Date;
-    durationMinutes: number;
-    tags: string[];
-  }) => void;
-  isLoading?: boolean;
-  error?: string;
+  onAnalyze?: (text: string) => void;
+  onReset?: () => void;
+  isAnalyzing?: boolean;
+  sentence?: string;
+  analysis?: {
+    tokens: Array<{
+      text: string;
+      type: string;
+      confidence: number;
+    }>;
+    entities: Array<{
+      text: string;
+      type: string;
+      start: number;
+      end: number;
+    }>;
+    sentiment: {
+      score: number;
+      label: "positive" | "negative" | "neutral";
+    };
+  };
 }
 
 const ActivityInputPanel = ({
-  onSubmit = () => {},
-  isLoading = false,
-  error = "",
+  onAnalyze = () => {},
+  onReset = () => {},
+  isAnalyzing = false,
+  sentence = "",
+  analysis = {
+    tokens: [
+      { text: "Example", type: "NOUN", confidence: 0.95 },
+      { text: "sentence", type: "NOUN", confidence: 0.92 },
+    ],
+    entities: [{ text: "Example", type: "TERM", start: 0, end: 7 }],
+    sentiment: {
+      score: 0.5,
+      label: "neutral",
+    },
+  },
 }: ActivityInputPanelProps) => {
-  const [input, setInput] = useState("");
-  const [parsedActivity, setParsedActivity] = useState({
-    content: "Running in the park",
-    parsedDate: new Date(),
-    durationMinutes: 30,
-    tags: ["exercise", "outdoor"],
-  });
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInput(e.target.value);
-    // In a real implementation, this would trigger the parser
-    // For now, we'll just use the default parsed activity
-  };
+  const [inputText, setInputText] = React.useState(sentence);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit(parsedActivity);
-    setInput("");
+    onAnalyze(inputText);
+  };
+
+  const handleReset = () => {
+    setInputText("");
+    onReset();
   };
 
   return (
-    <Card className="w-full bg-white shadow-md">
-      <CardContent className="p-4">
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="flex gap-4">
-            <div className="flex-1">
-              <Input
-                value={input}
-                onChange={handleInputChange}
-                placeholder="Add activity (e.g., 'Running in the park for 30min #exercise')"
-                className="w-full"
-                disabled={isLoading}
-              />
+    <div className="w-full space-y-6 bg-gray-50 p-6 rounded-lg">
+      <Card className="bg-white">
+        <CardContent className="p-6">
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <Textarea
+              placeholder="Enter a sentence to analyze..."
+              value={inputText}
+              onChange={(e) => setInputText(e.target.value)}
+              className="min-h-[100px] resize-none"
+            />
+            <div className="flex justify-end gap-2">
+              <Button
+                type="button"
+                variant="outline"
+                onClick={handleReset}
+                disabled={isAnalyzing}
+              >
+                <RefreshCw className="w-4 h-4 mr-2" />
+                Reset
+              </Button>
+              <Button type="submit" disabled={!inputText.trim() || isAnalyzing}>
+                <Send className="w-4 h-4 mr-2" />
+                Analyze
+              </Button>
             </div>
-            <Button type="submit" disabled={isLoading}>
-              <Send className="w-4 h-4 mr-2" />
-              Add
-            </Button>
-          </div>
+          </form>
+        </CardContent>
+      </Card>
 
-          {/* Preview Panel */}
-          <div className="flex items-center gap-4 text-sm text-gray-600">
-            <div className="flex items-center gap-1">
-              <Calendar className="w-4 h-4" />
-              {format(parsedActivity.parsedDate, "MMM d, yyyy")}
-            </div>
-            <div className="flex items-center gap-1">
-              <Clock className="w-4 h-4" />
-              {parsedActivity.durationMinutes} min
-            </div>
-            <div className="flex items-center gap-2">
-              <Hash className="w-4 h-4" />
-              {parsedActivity.tags.map((tag, index) => (
-                <Badge key={index} variant="secondary" className="text-xs">
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-          </div>
-
-          {error && (
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <div className="flex items-center gap-2 text-destructive">
-                    <AlertCircle className="w-4 h-4" />
-                    <span>Error parsing input</span>
-                  </div>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>{error}</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          )}
-        </form>
-      </CardContent>
-    </Card>
+      {sentence && <SentenceAnalyzer sentence={sentence} analysis={analysis} />}
+    </div>
   );
 };
 
