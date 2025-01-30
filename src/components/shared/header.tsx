@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, User, LogOut, BarChart } from "lucide-react";
+import { Menu, User, LogOut, BarChart, HelpCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../ui/button";
 import { signOut } from "@/lib/auth";
@@ -76,6 +76,14 @@ export default function Header() {
             <DropdownMenuItem onClick={() => navigate("/dashboard")}>
               <BarChart className="mr-2 h-4 w-4" />
               {t("common.dashboard")}
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => navigate("/souhrn")}>
+              <BarChart className="mr-2 h-4 w-4" />
+              {t("common.summary", "Týdenní souhrn")}
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => navigate("/help")}>
+              <HelpCircle className="mr-2 h-4 w-4" />
+              {t("common.help")}
             </DropdownMenuItem>
             <DropdownMenuItem onClick={signOut}>
               <LogOut className="mr-2 h-4 w-4" />

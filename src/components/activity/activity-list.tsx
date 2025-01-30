@@ -151,7 +151,6 @@ export default function ActivityList() {
           selectedTag={selectedTag}
         />
       </div>
-
       <div className="space-y-2">
         <div className="flex justify-between items-center mb-4">
           <Button
@@ -176,19 +175,19 @@ export default function ActivityList() {
 
         {activities.map((activity) => (
           <Card key={activity.id}>
-            <CardContent className="py-2">
+            <CardContent className="h-11 pl-9 pr-10">
               <div className="grid grid-cols-[180px_80px_1fr_48px] gap-2 items-start py-1">
-                <div className="text-sm text-muted-foreground">
+                <div className="text-sm text-muted-foreground flex w-[120px]">
                   {activity.parsed_date &&
                     format(new Date(activity.parsed_date), "d.M.yyyy HH:mm", {
                       locale: cs,
                     })}
                 </div>
-                <div className="text-sm text-muted-foreground">
+                <div className="text-sm text-muted-foreground flex">
                   {activity.duration_minutes} {t("common.minutes")}
                 </div>
                 <TooltipProvider>
-                  <Tooltip>
+                  <Tooltip className="flex justify-center">
                     <TooltipTrigger asChild>
                       <div className="max-w-full overflow-hidden">
                         <p className="truncate whitespace-nowrap">
@@ -238,7 +237,6 @@ export default function ActivityList() {
           </Card>
         ))}
       </div>
-
       <AlertDialog open={!!deleteId} onOpenChange={() => setDeleteId(null)}>
         <AlertDialogContent>
           <AlertDialogHeader>

@@ -9,81 +9,97 @@ const i18n = i18next
     resources: {
       en: {
         translation: {
-          auth: {
-            login: "Login",
-            signup: "Sign Up",
-            email: "Email",
-            password: "Password",
-            needAccount: "Need an account?",
-            haveAccount: "Already have an account?",
-            welcome: "Welcome back!",
-            createAccount: "Create a new account",
-            loading: "Loading...",
-            orContinueWith: "Or continue with",
-            forgotPassword: "Forgot password?",
-            resetPassword: "Reset Password",
-            resetPasswordDesc:
-              "Enter your email to receive a password reset link",
-            sendResetLink: "Send Reset Link",
-            sending: "Sending...",
-            checkYourEmail: "Check your email",
-            resetPasswordSent:
-              "We've sent you a password reset link. Please check your email.",
-            resetPasswordSuccess: "Reset link sent",
-            resetPasswordSuccessDesc:
-              "Check your email for the password reset link.",
-            resetPasswordError: "Failed to send reset link",
-            backToLogin: "Back to login",
-            updatePassword: "Update Password",
-            updatePasswordDesc: "Enter your new password",
-            newPassword: "New password",
-            updating: "Updating...",
-            passwordUpdated: "Password updated",
-            passwordUpdatedDesc: "Your password has been successfully updated.",
-            updatePasswordError: "Failed to update password",
-            error: "Error",
-          },
           activity: {
             placeholder:
-              "What are you doing? E.g: 22.1. 30m Work on project #project",
-            add: "Add",
-            edit: "Edit",
-            delete: "Delete",
-            cancel: "Cancel",
-            saving: "Saving...",
-            deleteConfirm: "Are you sure you want to delete this activity?",
-            deleteDescription: "This action cannot be undone.",
-            deleteSuccess: "Activity deleted",
-            deleteSuccessDesc: "Activity was successfully deleted.",
-            error: "Error",
-            deleteError: "Failed to delete activity.",
+              "Add activity (e.g., '8:00 30m preparation for #workshop')",
             time: "Time",
             duration: "Duration",
             description: "Description",
-            popularTags: "Popular Tags",
+            edit: "Edit",
+            delete: "Delete",
+            cancel: "Cancel",
+            add: "Add",
+            saving: "Saving...",
+            deleteConfirm: "Delete Activity",
+            deleteDescription: "Are you sure you want to delete this activity?",
+            deleteSuccess: "Activity Deleted",
+            deleteSuccessDesc: "The activity has been deleted successfully",
+            deleteError: "There was an error deleting the activity",
+            error: "Error",
+          },
+          common: {
+            back: "Back",
+            index: "Home",
+            profile: "Profile",
+            dashboard: "Dashboard",
+            summary: "Weekly Summary",
+            logout: "Logout",
+            changelog: "Changelog",
+            minutes: "minutes",
+            newer: "Newer",
+            older: "Older",
+            help: "Help",
+          },
+          help: {
+            title: "Help",
+            inputFormat: {
+              title: "Input Format",
+              description:
+                "Activities can be entered in a natural format that includes time, duration, description, and tags. Each component has its specific format:",
+            },
+            components: {
+              time: {
+                title: "Time",
+                description: "Enter the time in 24-hour format (HH:MM):",
+              },
+              duration: {
+                title: "Duration",
+                description: "Specify duration using m (minutes) or h (hours):",
+              },
+              description: {
+                title: "Description",
+                description: "Add a free-form description of your activity.",
+              },
+              tags: {
+                title: "Tags",
+                description: "Add hashtags to categorize your activities:",
+              },
+            },
+            examples: {
+              title: "Examples",
+              workshop: "8:00 30m workshop preparation for #clientname ",
+              meeting: "14:30 1h team meeting #projectname",
+              review: "10:15 45m code review #myprivateproject",
+            },
           },
           landing: {
-            title:
-              "Track your activities effortlessly with natural language input",
+<<<<<<< HEAD
+            title: "Only DONE counts on the way to the goal!",
+=======
+            title: "Track your activities and get AI-powered insights",
+>>>>>>> 0a74fe73010f5756445428cdf9ddb01a84f4fe0b
             getStarted: "Get Started",
+            example: {
+              activity: "Budget preparation for project",
+              description:
+                "Simply write what you've done - we'll automatically recognize the date, time, duration, and hashtags!",
+            },
             features: {
               timeInput: {
                 title: "Natural Time Input",
-                description:
-                  "Enter activities using natural language with flexible date and time formats",
+                description: "Enter your activities in natural language",
               },
               tagging: {
                 title: "Smart Tagging",
-                description:
-                  "Organize your activities with hashtags for easy categorization and filtering",
+                description: "Organize with hashtags",
               },
               insights: {
-                title: "Insights",
-                description:
-                  "Track your progress and get insights into how you spend your time",
+                title: "AI Insights",
+                description: "Get weekly summaries and patterns",
               },
             },
           },
+<<<<<<< HEAD
           common: {
             loading: "Loading...",
             logout: "Logout",
@@ -104,100 +120,155 @@ const i18n = i18next
             average: "Average",
             averageLine: "Average",
             tagDistribution: "Tag Distribution",
+            weekAnalysis: "Week Analysis",
+            noActivities: "No activities recorded for this week.",
           },
+=======
+>>>>>>> 0a74fe73010f5756445428cdf9ddb01a84f4fe0b
           profile: {
             settings: "Profile Settings",
+            email: "Email",
             firstName: "First Name",
             lastName: "Last Name",
-            language: "Preferred Language",
+            language: "Language",
             selectLanguage: "Select language",
-            saveChanges: "Save Changes",
-            saving: "Saving...",
-            updateSuccess: "Profile updated",
-            updateSuccessDesc: "Your profile has been successfully updated.",
-            updateError: "Error",
-            updateErrorDesc: "Failed to update profile.",
             weekStartsOn: "Week starts on",
             monday: "Monday",
             sunday: "Sunday",
+            saving: "Saving...",
+            saveChanges: "Save Changes",
+            updateSuccess: "Profile Updated",
+            updateSuccessDesc: "Your profile has been updated successfully",
+            updateError: "Update Error",
+            updateErrorDesc: "There was an error updating your profile",
+          },
+          dashboard: {
+            title: "Activity Dashboard",
+            weeklyActivity: "Weekly Activity",
+            average: "Average",
+            hours: "Hours",
+            averageLine: "Average",
+            tagDistribution: "Tag Distribution",
+          },
+          summary: {
+            title: "Weekly Summary for {{startDate}} - {{endDate}}",
+            description:
+              "Get an AI-powered analysis of your weekly activities. Track your progress, identify patterns, and gain insights into your work.",
+            viewSummary: "View Summary",
+            generating: "Analyzing your data...",
+            marketing: {
+              title: "Weekly Activity Summaries",
+              features: [
+                "Smart pattern recognition",
+                "Time allocation analysis",
+                "Productivity insights",
+                "Weekly trends",
+              ],
+            },
+            selectWeek: "Select week",
+            noSummaryYet: "No summary available yet",
+            lastSummary: "Last Generated Summary",
+            generatedAt: "Generated on {{date}}",
+            copyMarkdown: "Copy in Markdown",
+            copied: "Copied to clipboard",
+            copiedDesc: "The summary has been copied to your clipboard",
           },
         },
       },
       cs: {
         translation: {
-          auth: {
-            login: "Přihlásit",
-            signup: "Registrovat",
-            email: "Email",
-            password: "Heslo",
-            needAccount: "Potřebujete účet?",
-            haveAccount: "Již máte účet?",
-            welcome: "Vítejte zpět!",
-            createAccount: "Vytvořit nový účet",
-            loading: "Načítání...",
-            orContinueWith: "Nebo pokračujte s",
-            forgotPassword: "Zapomenuté heslo?",
-            resetPassword: "Reset hesla",
-            resetPasswordDesc:
-              "Zadejte email pro zaslání odkazu na reset hesla",
-            sendResetLink: "Odeslat odkaz",
-            sending: "Odesílám...",
-            checkYourEmail: "Zkontrolujte email",
-            resetPasswordSent:
-              "Poslali jsme vám odkaz na reset hesla. Prosím zkontrolujte svůj email.",
-            resetPasswordSuccess: "Odkaz odeslán",
-            resetPasswordSuccessDesc:
-              "Zkontrolujte svůj email pro odkaz na reset hesla.",
-            resetPasswordError: "Nepodařilo se odeslat odkaz na reset hesla",
-            backToLogin: "Zpět na přihlášení",
-            updatePassword: "Aktualizovat heslo",
-            updatePasswordDesc: "Zadejte nové heslo",
-            newPassword: "Nové heslo",
-            updating: "Aktualizuji...",
-            passwordUpdated: "Heslo aktualizováno",
-            passwordUpdatedDesc: "Vaše heslo bylo úspěšně aktualizováno.",
-            updatePasswordError: "Nepodařilo se aktualizovat heslo",
-            error: "Chyba",
-          },
           activity: {
-            placeholder: "Co děláš? Např: 22.1. 30m Práce na projektu #projekt",
-            add: "Přidat",
+            placeholder:
+              "Přidat aktivitu (např. '8:00 30m příprava na #workshop')",
+            time: "Čas",
+            duration: "Doba trvání",
+            description: "Popis",
             edit: "Upravit",
             delete: "Smazat",
             cancel: "Zrušit",
+            add: "Přidat",
             saving: "Ukládám...",
-            deleteConfirm: "Opravdu chcete smazat tuto aktivitu?",
-            deleteDescription: "Tato akce je nevratná.",
+            deleteConfirm: "Smazat aktivitu",
+            deleteDescription: "Opravdu chcete smazat tuto aktivitu?",
             deleteSuccess: "Aktivita smazána",
-            deleteSuccessDesc: "Aktivita byla úspěšně smazána.",
+            deleteSuccessDesc: "Aktivita byla úspěšně smazána",
+            deleteError: "Při mazání aktivity došlo k chybě",
             error: "Chyba",
-            deleteError: "Nepodařilo se smazat aktivitu.",
-            time: "Čas",
-            duration: "Trvání",
-            description: "Popis",
-            popularTags: "Oblíbené tagy",
+          },
+          common: {
+            back: "Zpět",
+            index: "Domů",
+            profile: "Profil",
+            dashboard: "Přehled",
+            summary: "Týdenní souhrn",
+            logout: "Odhlásit",
+            changelog: "Historie změn",
+            minutes: "minut",
+            newer: "Novější",
+            older: "Starší",
+            help: "Nápověda",
+          },
+          help: {
+            title: "Nápověda",
+            inputFormat: {
+              title: "Formát zadávání",
+              description:
+                "Aktivity lze zadávat v přirozeném formátu, který obsahuje čas, dobu trvání, popis a štítky. Každá část má svůj specifický formát:",
+            },
+            components: {
+              time: {
+                title: "Čas",
+                description: "Zadejte čas ve 24hodinovém formátu (HH:MM):",
+              },
+              duration: {
+                title: "Doba trvání",
+                description:
+                  "Určete dobu trvání pomocí m (minuty) nebo h (hodiny):",
+              },
+              description: {
+                title: "Popis",
+                description: "Přidejte volný popis vaší aktivity.",
+              },
+              tags: {
+                title: "Štítky",
+                description: "Přidejte hashtagy pro kategorizaci aktivit:",
+              },
+            },
+            examples: {
+              title: "Příklady",
+              workshop: "8:00 30m příprava na #workshop",
+              meeting: "1h týmová schůzka kvůli #jménoprojektu",
+              review: "10:00 1:30h revize kódu pro můj #projekt",
+            },
           },
           landing: {
-            title: "Sledujte své aktivity jednoduše pomocí přirozeného jazyka",
+<<<<<<< HEAD
+            title: "Jen HOTOVÉ se počítá na cestě k cíli!",
+=======
+            title: "Sledujte své aktivity a získejte AI přehledy",
+>>>>>>> 0a74fe73010f5756445428cdf9ddb01a84f4fe0b
             getStarted: "Začít",
+            example: {
+              activity: "Příprava rozpočtu pro projekt",
+              description:
+                "Jednoduše napište, co jste udělali - datum, čas, trvání a hashtagy automaticky rozpoznáme!",
+            },
             features: {
               timeInput: {
                 title: "Přirozený vstup času",
-                description:
-                  "Zadávejte aktivity pomocí přirozeného jazyka s flexibilními formáty data a času",
+                description: "Zadávejte aktivity přirozeným jazykem",
               },
               tagging: {
                 title: "Chytré štítkování",
-                description:
-                  "Organizujte své aktivity pomocí hashtagů pro snadnou kategorizaci a filtrování",
+                description: "Organizujte pomocí hashtagů",
               },
               insights: {
-                title: "Přehledy",
-                description:
-                  "Sledujte svůj pokrok a získejte přehled o tom, jak trávíte svůj čas",
+                title: "AI přehledy",
+                description: "Získejte týdenní souhrny a vzorce",
               },
             },
           },
+<<<<<<< HEAD
           common: {
             loading: "Načítání...",
             logout: "Odhlásit",
@@ -218,103 +289,161 @@ const i18n = i18next
             average: "Průměr",
             averageLine: "Průměr",
             tagDistribution: "Rozložení tagů",
+            weekAnalysis: "Analýza týdne",
+            noActivities: "Žádné aktivity pro tento týden.",
           },
+=======
+>>>>>>> 0a74fe73010f5756445428cdf9ddb01a84f4fe0b
           profile: {
             settings: "Nastavení profilu",
+            email: "Email",
             firstName: "Jméno",
             lastName: "Příjmení",
-            language: "Preferovaný jazyk",
+            language: "Jazyk",
             selectLanguage: "Vyberte jazyk",
-            saveChanges: "Uložit změny",
-            saving: "Ukládám...",
-            updateSuccess: "Profil aktualizován",
-            updateSuccessDesc: "Váš profil byl úspěšně aktualizován.",
-            updateError: "Chyba",
-            updateErrorDesc: "Nepodařilo se aktualizovat profil.",
-            weekStartsOn: "Týden začíná",
+            weekStartsOn: "Týden začíná v",
             monday: "Pondělí",
             sunday: "Neděle",
+            saving: "Ukládám...",
+            saveChanges: "Uložit změny",
+            updateSuccess: "Profil aktualizován",
+            updateSuccessDesc: "Váš profil byl úspěšně aktualizován",
+            updateError: "Chyba aktualizace",
+            updateErrorDesc: "Při aktualizaci profilu došlo k chybě",
+          },
+          dashboard: {
+            title: "Přehled aktivit",
+            weeklyActivity: "Týdenní aktivita",
+            average: "Průměr",
+            hours: "Hodiny",
+            averageLine: "Průměr",
+            tagDistribution: "Distribuce štítků",
+          },
+          summary: {
+            title: "Týdenní souhrn za {{startDate}} - {{endDate}}",
+            description:
+              "Získejte AI analýzu vašich týdenních aktivit. Sledujte svůj pokrok, identifikujte vzorce a získejte přehled o své práci.",
+            viewSummary: "Zobrazit souhrn",
+            generating: "Analyzujeme vaše data...",
+            marketing: {
+              title: "Týdenní souhrny aktivit",
+              features: [
+                "Chytré rozpoznávání vzorců",
+                "Analýza využití času",
+                "Přehledy produktivity",
+                "Týdenní trendy",
+              ],
+            },
+            selectWeek: "Vyberte týden",
+            noSummaryYet: "Zatím není k dispozici žádný souhrn",
+            lastSummary: "Poslední vygenerovaný souhrn",
+            generatedAt: "Vygenerováno {{date}}",
+            copyMarkdown: "Zkopírovat v Markdown",
+            copied: "Zkopírováno",
+            copiedDesc: "Souhrn byl zkopírován do schránky",
           },
         },
       },
       de: {
         translation: {
-          auth: {
-            login: "Anmelden",
-            signup: "Registrieren",
-            email: "E-Mail",
-            password: "Passwort",
-            needAccount: "Noch kein Konto?",
-            haveAccount: "Bereits ein Konto?",
-            welcome: "Willkommen zurück!",
-            createAccount: "Neues Konto erstellen",
-            loading: "Laden...",
-            orContinueWith: "Oder fortfahren mit",
-            forgotPassword: "Passwort vergessen?",
-            resetPassword: "Passwort zurücksetzen",
-            resetPasswordDesc:
-              "Geben Sie Ihre E-Mail-Adresse ein, um einen Link zum Zurücksetzen des Passworts zu erhalten",
-            sendResetLink: "Link senden",
-            sending: "Senden...",
-            checkYourEmail: "Überprüfen Sie Ihre E-Mail",
-            resetPasswordSent:
-              "Wir haben Ihnen einen Link zum Zurücksetzen des Passworts gesendet. Bitte überprüfen Sie Ihre E-Mail.",
-            resetPasswordSuccess: "Link gesendet",
-            resetPasswordSuccessDesc:
-              "Überprüfen Sie Ihre E-Mail für den Link zum Zurücksetzen des Passworts.",
-            resetPasswordError: "Fehler beim Senden des Reset-Links",
-            backToLogin: "Zurück zur Anmeldung",
-            updatePassword: "Passwort aktualisieren",
-            updatePasswordDesc: "Geben Sie Ihr neues Passwort ein",
-            newPassword: "Neues Passwort",
-            updating: "Aktualisiere...",
-            passwordUpdated: "Passwort aktualisiert",
-            passwordUpdatedDesc: "Ihr Passwort wurde erfolgreich aktualisiert.",
-            updatePasswordError: "Fehler beim Aktualisieren des Passworts",
-            error: "Fehler",
-          },
           activity: {
             placeholder:
-              "Was machst du? Z.B: 22.1. 30m Arbeit am Projekt #projekt",
-            add: "Hinzufügen",
-            edit: "Bearbeiten",
-            delete: "Löschen",
-            cancel: "Abbrechen",
-            saving: "Speichern...",
-            deleteConfirm: "Möchten Sie diese Aktivität wirklich löschen?",
-            deleteDescription:
-              "Diese Aktion kann nicht rückgängig gemacht werden.",
-            deleteSuccess: "Aktivität gelöscht",
-            deleteSuccessDesc: "Die Aktivität wurde erfolgreich gelöscht.",
-            error: "Fehler",
-            deleteError: "Aktivität konnte nicht gelöscht werden.",
+              "Aktivität hinzufügen (z.B. '8:00 30m Vorbereitung für #workshop')",
             time: "Zeit",
             duration: "Dauer",
             description: "Beschreibung",
-            popularTags: "Beliebte Tags",
+            edit: "Bearbeiten",
+            delete: "Löschen",
+            cancel: "Abbrechen",
+            add: "Hinzufügen",
+            saving: "Speichern...",
+            deleteConfirm: "Aktivität löschen",
+            deleteDescription: "Möchten Sie diese Aktivität wirklich löschen?",
+            deleteSuccess: "Aktivität gelöscht",
+            deleteSuccessDesc: "Die Aktivität wurde erfolgreich gelöscht",
+            deleteError:
+              "Beim Löschen der Aktivität ist ein Fehler aufgetreten",
+            error: "Fehler",
+          },
+          common: {
+            back: "Zurück",
+            index: "Start",
+            profile: "Profil",
+            dashboard: "Dashboard",
+            summary: "Wochenzusammenfassung",
+            logout: "Abmelden",
+            changelog: "Änderungsprotokoll",
+            minutes: "Minuten",
+            newer: "Neuer",
+            older: "Älter",
+            help: "Hilfe",
+          },
+          help: {
+            title: "Hilfe",
+            inputFormat: {
+              title: "Eingabeformat",
+              description:
+                "Aktivitäten können in einem natürlichen Format eingegeben werden, das Zeit, Dauer, Beschreibung und Tags enthält. Jede Komponente hat ihr spezifisches Format:",
+            },
+            components: {
+              time: {
+                title: "Zeit",
+                description:
+                  "Geben Sie die Zeit im 24-Stunden-Format ein (HH:MM):",
+              },
+              duration: {
+                title: "Dauer",
+                description:
+                  "Geben Sie die Dauer mit m (Minuten) oder h (Stunden) an:",
+              },
+              description: {
+                title: "Beschreibung",
+                description:
+                  "Fügen Sie eine freie Beschreibung Ihrer Aktivität hinzu.",
+              },
+              tags: {
+                title: "Tags",
+                description:
+                  "Fügen Sie Hashtags zur Kategorisierung Ihrer Aktivitäten hinzu:",
+              },
+            },
+            examples: {
+              title: "Beispiele",
+              workshop: "8:00 30m Workshop-Vorbereitung #bmw",
+              meeting: "14:30 1h Team-Meeting #aldi",
+              review: "45m Code-Review #google",
+            },
           },
           landing: {
+<<<<<<< HEAD
+            title: "Nur ERLEDIGT zählt auf dem Weg zum Ziel!",
+=======
             title:
-              "Verfolgen Sie Ihre Aktivitäten mühelos mit natürlicher Spracheingabe",
+              "Verfolgen Sie Ihre Aktivitäten und erhalten Sie KI-gestützte Einblicke",
+>>>>>>> 0a74fe73010f5756445428cdf9ddb01a84f4fe0b
             getStarted: "Loslegen",
+            example: {
+              activity: "Budgetvorbereitung für Projekt",
+              description:
+                "Schreiben Sie einfach auf, was Sie gemacht haben - wir erkennen automatisch Datum, Uhrzeit, Dauer und Hashtags!",
+            },
             features: {
               timeInput: {
                 title: "Natürliche Zeiteingabe",
-                description:
-                  "Geben Sie Aktivitäten in natürlicher Sprache mit flexiblen Datums- und Zeitformaten ein",
+                description: "Geben Sie Aktivitäten in natürlicher Sprache ein",
               },
               tagging: {
                 title: "Intelligentes Tagging",
-                description:
-                  "Organisieren Sie Ihre Aktivitäten mit Hashtags für einfache Kategorisierung und Filterung",
+                description: "Organisieren Sie mit Hashtags",
               },
               insights: {
-                title: "Einblicke",
+                title: "KI-Einblicke",
                 description:
-                  "Verfolgen Sie Ihren Fortschritt und erhalten Sie Einblicke in Ihre Zeitnutzung",
+                  "Erhalten Sie wöchentliche Zusammenfassungen und Muster",
               },
             },
           },
+<<<<<<< HEAD
           common: {
             loading: "Laden...",
             logout: "Abmelden",
@@ -335,22 +464,60 @@ const i18n = i18next
             average: "Durchschnitt",
             averageLine: "Durchschnitt",
             tagDistribution: "Tag-Verteilung",
+            weekAnalysis: "Wochenanalyse",
+            noActivities: "Keine Aktivitäten für diese Woche.",
           },
+=======
+>>>>>>> 0a74fe73010f5756445428cdf9ddb01a84f4fe0b
           profile: {
             settings: "Profileinstellungen",
+            email: "E-Mail",
             firstName: "Vorname",
             lastName: "Nachname",
-            language: "Bevorzugte Sprache",
+            language: "Sprache",
             selectLanguage: "Sprache auswählen",
-            saveChanges: "Änderungen speichern",
-            saving: "Speichern...",
-            updateSuccess: "Profil aktualisiert",
-            updateSuccessDesc: "Ihr Profil wurde erfolgreich aktualisiert.",
-            updateError: "Fehler",
-            updateErrorDesc: "Profil konnte nicht aktualisiert werden.",
             weekStartsOn: "Woche beginnt am",
             monday: "Montag",
             sunday: "Sonntag",
+            saving: "Speichern...",
+            saveChanges: "Änderungen speichern",
+            updateSuccess: "Profil aktualisiert",
+            updateSuccessDesc: "Ihr Profil wurde erfolgreich aktualisiert",
+            updateError: "Aktualisierungsfehler",
+            updateErrorDesc:
+              "Beim Aktualisieren Ihres Profils ist ein Fehler aufgetreten",
+          },
+          dashboard: {
+            title: "Aktivitäts-Dashboard",
+            weeklyActivity: "Wöchentliche Aktivität",
+            average: "Durchschnitt",
+            hours: "Stunden",
+            averageLine: "Durchschnitt",
+            tagDistribution: "Tag-Verteilung",
+          },
+          summary: {
+            title: "Wochenzusammenfassung für {{startDate}} - {{endDate}}",
+            description:
+              "Erhalten Sie eine KI-gestützte Analyse Ihrer wöchentlichen Aktivitäten. Verfolgen Sie Ihren Fortschritt, erkennen Sie Muster und gewinnen Sie Einblicke in Ihre Arbeit.",
+            viewSummary: "Zusammenfassung anzeigen",
+            generating: "Ihre Daten werden analysiert...",
+            marketing: {
+              title: "Wöchentliche Aktivitätszusammenfassungen",
+              features: [
+                "Intelligente Mustererkennung",
+                "Zeitverteilungsanalyse",
+                "Produktivitätseinblicke",
+                "Wöchentliche Trends",
+              ],
+            },
+            selectWeek: "Woche auswählen",
+            noSummaryYet: "Noch keine Zusammenfassung verfügbar",
+            lastSummary: "Zuletzt generierte Zusammenfassung",
+            generatedAt: "Generiert am {{date}}",
+            copyMarkdown: "In Markdown kopieren",
+            copied: "Kopiert",
+            copiedDesc:
+              "Die Zusammenfassung wurde in die Zwischenablage kopiert",
           },
         },
       },

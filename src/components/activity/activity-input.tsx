@@ -5,6 +5,7 @@ import { parseActivity } from "@/lib/activity-parser";
 import { supabase } from "@/lib/supabase";
 import { useAuth } from "@/lib/auth";
 import { useTranslation } from "react-i18next";
+import { HelpCircle } from "lucide-react";
 
 interface ActivityInputProps {
   editingActivity?: {
@@ -165,18 +166,29 @@ export default function ActivityInput({
           placeholder={t("activity.placeholder")}
           className="flex-1"
         />
-        <Button type="submit" disabled={loading}>
-          {loading
-            ? t("activity.saving")
-            : editingActivity
-              ? t("activity.edit")
-              : t("activity.add")}
-        </Button>
-        {editingActivity && (
-          <Button type="button" variant="ghost" onClick={handleCancel}>
-            {t("activity.cancel")}
+        <div className="flex gap-2">
+          <Button type="submit" disabled={loading}>
+            {loading
+              ? t("activity.saving")
+              : editingActivity
+                ? t("activity.edit")
+                : t("activity.add")}
           </Button>
-        )}
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            onClick={() => (window.location.href = "/help")}
+            className="text-muted-foreground"
+          >
+            <HelpCircle className="h-4 w-4" />
+          </Button>
+          {editingActivity && (
+            <Button type="button" variant="ghost" onClick={handleCancel}>
+              {t("activity.cancel")}
+            </Button>
+          )}
+        </div>
       </form>
 
       {showSuggestions && (

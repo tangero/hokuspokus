@@ -11,9 +11,19 @@ export default function Landing() {
   return (
     <Layout>
       {/* Hero Section */}
-      <div className="container mx-auto px-4 py-16 md:py-24">
+      <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="text-center space-y-6 max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">
+          <div className="bg-white p-4 rounded-lg shadow-md border border-slate-200 mb-6">
+            <div className="flex items-center justify-center gap-2 text-sm text-slate-600 mb-2">
+              <span className="font-mono bg-slate-100 px-2 py-1 rounded">
+                25.1. 10:00 1h {t("landing.example.activity")} #demoday
+              </span>
+            </div>
+            <p className="text-sm text-slate-600">
+              {t("landing.example.description")}
+            </p>
+          </div>
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent md:h-16">
             Progressor
           </h1>
           <p className="text-xl md:text-2xl text-slate-600">
@@ -30,7 +40,6 @@ export default function Landing() {
           </div>
         </div>
       </div>
-
       {/* Features Section */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-3 gap-8">
